@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Break from "./components/Break";
+import Session from "./components/Session";
+import React, { useState } from "react";
 
 function App() {
+  const [SessionLength, setSessionLength] = useState(60 * 25);
+  const [breakLength, setBreakLength] = useState(300);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Break breakLength={breakLength} setBreakLength={setBreakLength} />
+      <Session
+        setSessionLength={setSessionLength}
+        SessionLength={SessionLength}
+      />
     </div>
   );
 }
