@@ -44,28 +44,28 @@ function TimeLeft({
             return SessionLength;
           }
         });
-      }, 100);
+      }, 1000);
       setIntervalId(newIntervalId);
     }
   };
 
   return (
-    <div className="flex flex-col justify-evenly items-center w-64 h-64 bg-red-600 rounded-full">
-      <p className="text-3xl" id="timer-label">
+    <div className="flex flex-col justify-around h-[300px] relative items-center col-span-1 w-1/6 text-center bg-white rounded-lg shadow divide-gray-200">
+      <p className="text-5xl text-blue-500" id="timer-label">
         {currentSessionType}
       </p>
-      <p className="text-4xl" id="time-left">
+      <p className="text-4xl font-bold text-black " id="time-left">
         {formattedTimeLeft}
       </p>
       <button
-        className="font-semibold bg-white rounded-md px-5"
+        className="font-semibold bg-[#cbdbfa] rounded-md w-5/12 px-5"
         id="start_stop"
         onClick={handleStartStopClick}
       >
         {isStarted ? "Stop" : "Start"}
       </button>
       <button
-        className="font-semibold bg-white rounded-md px-4"
+        className="font-semibold bg-[#cbdbfa] rounded-md w-5/12 px-5"
         id="reset"
         onClick={handleResetButtonClick}
       >
